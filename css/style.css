@@ -33,6 +33,7 @@ img{
 }
 .slider
 {
+  --isMaxSlide:1;
   --index: ;
   transform:translateX(calc(var(--index) * -100%));
   transition:var(--transition);
@@ -41,7 +42,7 @@ img{
 
 .slide
 {
-  min-width:100%;
+  min-width:calc(100% / var(--isMaxSlide));
 }
 .slide img{
   object-fit:cover;
@@ -79,7 +80,6 @@ img{
 }
 :has(.btn:checked:nth-child(1)) .slider{
   --index:0;
-
 }
 :has(.btn:checked:nth-child(2)) .slider{
   --index:1;
